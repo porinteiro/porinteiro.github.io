@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compra confirmada — O Mapa do Climatério</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{--oliva:#6B7A5F;--oliva-esc:#4F5C46;--caramelo:#D4B895;--caramelo-esc:#B89A73;
+--grafite:#2C2A29;--areia:#E8E3DD;--off:#FAF9F6;--branco:#fff;--cinza:#6E6960;--borda:#DDD7CF;
+--verde:#4F7A4A;--vermelho:#A3453B;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--areia);color:var(--grafite);font-family:var(--sans);font-size:16px;
+line-height:1.62;-webkit-font-smoothing:antialiased;display:flex;justify-content:center}
+.app{width:100%;max-width:660px;background:var(--off);min-height:100vh;
+box-shadow:0 0 60px rgba(44,42,41,.08)}
+
+.topo{background:linear-gradient(157deg,#7A8A6D,#6B7A5F 34%,#4F5C46 80%);color:var(--off);
+padding:52px 30px 46px;text-align:center;position:relative;overflow:hidden}
+.topo .arc{position:absolute;width:340px;height:340px;border:1px solid rgba(212,184,149,.2);
+border-radius:50%;top:-140px;right:-120px}
+.check{width:60px;height:60px;border-radius:50%;background:rgba(250,249,246,.14);
+border:1.5px solid var(--caramelo);margin:0 auto 22px;display:grid;place-items:center;
+font-size:28px;color:var(--caramelo);position:relative}
+.topo h1{font-family:var(--serif);font-size:34px;font-weight:400;line-height:1.14;color:#fff;position:relative}
+.topo p{font-size:17px;color:rgba(250,249,246,.88);margin-top:14px;position:relative;
+max-width:420px;margin-left:auto;margin-right:auto}
+
+.corpo{padding:38px 30px 50px}
+h2{font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.2;margin-bottom:10px}
+.kick{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--caramelo-esc);
+font-weight:700;margin-bottom:12px}
+p{margin:0 0 16px}
+.bloco{margin-bottom:44px}
+
+.passos{list-style:none;counter-reset:s}
+.passos li{counter-increment:s;position:relative;padding:16px 0 16px 50px;border-top:1px solid var(--borda);font-size:16px}
+.passos li::before{content:counter(s);position:absolute;left:0;top:16px;width:32px;height:32px;
+border-radius:50%;background:var(--areia);color:var(--oliva-esc);display:grid;place-items:center;
+font-size:14px;font-weight:700}
+.passos li b{display:block;margin-bottom:3px}
+.passos li small{color:var(--cinza);font-size:14.5px;line-height:1.5;display:block}
+
+.acao{background:linear-gradient(155deg,#F3F1EC,#E9E4DA);border:1px solid #DDD5C7;
+border-radius:14px;padding:28px 30px;margin:6px 0 0}
+.acao .sel{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#9C7F5C;
+font-weight:700;margin-bottom:12px}
+.acao h3{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--oliva-esc);margin-bottom:12px}
+.acao ol{margin:14px 0 0 18px;font-size:16px}
+.acao li{margin-bottom:9px}
+.acao .why{border-top:1px solid #D8CEBE;margin-top:18px;padding-top:15px;font-size:14.5px;color:var(--cinza)}
+
+.nota{background:var(--branco);border:1px solid var(--borda);border-radius:12px;padding:22px 24px;margin:18px 0}
+.nota b.t{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--oliva-esc);
+display:block;margin-bottom:8px}
+.nota p{font-size:15.5px;color:var(--cinza);margin:0}
+.nota p+p{margin-top:9px}
+
+.form{background:var(--branco);border:1px solid var(--borda);border-radius:14px;padding:26px 28px}
+label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+color:var(--oliva-esc);font-weight:700;margin-bottom:6px}
+input{width:100%;padding:14px 16px;border:1.5px solid var(--borda);border-radius:10px;
+font-size:16px;font-family:inherit;background:var(--off);color:var(--grafite);margin-bottom:14px}
+input:focus{outline:none;border-color:var(--oliva)}
+.btn{width:100%;background:var(--oliva);color:#fff;border:none;border-radius:11px;padding:16px;
+font-size:16.5px;font-weight:700;font-family:inherit;cursor:pointer;transition:.15s}
+.btn:hover{background:var(--oliva-esc)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.mini{font-size:13px;color:var(--cinza);margin-top:12px;line-height:1.5}
+.ok{display:none;background:#E4EDE2;border:1px solid #C6D8C1;border-radius:11px;
+padding:18px 22px;color:var(--verde);font-size:15.5px}
+
+.oferta{background:linear-gradient(157deg,#7A8A6D,#4F5C46 68%,#3B4434);color:var(--off);
+border-radius:16px;padding:34px 30px;text-align:center}
+.oferta .k{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--caramelo)}
+.oferta h3{font-family:var(--serif);font-size:29px;font-weight:400;color:#fff;margin:12px 0 14px;line-height:1.14}
+.oferta p{font-size:16px;color:rgba(250,249,246,.87)}
+.oferta ul{list-style:none;text-align:left;max-width:400px;margin:20px auto 24px}
+.oferta li{padding:9px 0 9px 28px;position:relative;font-size:15.5px;color:rgba(250,249,246,.92);
+border-bottom:1px solid rgba(250,249,246,.14)}
+.oferta li:last-child{border-bottom:none}
+.oferta li::before{content:"";position:absolute;left:2px;top:19px;width:12px;height:2px;background:var(--caramelo)}
+.oferta .cta{display:block;background:var(--caramelo);color:#2C2A29;text-decoration:none;
+border:none;width:100%;font-family:inherit;font-size:17.5px;font-weight:700;padding:18px;
+border-radius:11px;cursor:pointer;transition:.15s}
+.oferta .cta:hover{background:#C4A681}
+.oferta .obs{font-size:13px;color:rgba(250,249,246,.6);margin-top:12px}
+.oferta input{background:rgba(255,255,255,.09);border-color:rgba(250,249,246,.24);color:#fff}
+.oferta input::placeholder{color:rgba(250,249,246,.45)}
+.oferta label{color:var(--caramelo);text-align:left}
+
+footer{padding:32px 30px 40px;font-size:12.5px;color:var(--cinza);line-height:1.6;border-top:1px solid var(--borda)}
+footer b{color:var(--grafite)}
+@media(max-width:520px){.topo{padding:40px 22px 36px}.topo h1{font-size:28px}
+.corpo{padding:30px 22px 40px}h2{font-size:23px}.acao,.form,.oferta{padding:22px 20px}}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="topo">
+    <div class="arc"></div>
+    <div class="check">✓</div>
+    <h1>Compra confirmada.<br>Bem-vinda.</h1>
+    <p>O seu material já está a caminho do seu e-mail. Leia esta página antes de sair —
+    tem uma coisa para fazer hoje.</p>
+  </div>
+
+  <div class="corpo">
+
+    <!-- 1. O QUE ACONTECE AGORA -->
+    <div class="bloco">
+      <div class="kick">Primeiro</div>
+      <h2>O que acontece agora</h2>
+      <ol class="passos">
+        <li><b>Confira o seu e-mail</b><small>O acesso chega em segundos. Se não estiver na
+        caixa de entrada, <b>olhe o spam e a aba Promoções</b> — é onde mais se perde.</small></li>
+        <li><b>Salve o arquivo no celular</b><small>São três materiais num PDF só, com índice:
+        o guia, o Diário e o Caderno da Consulta.</small></li>
+        <li><b>Imprima o Diário</b><small>Ele funciona muito melhor no papel, ao lado da cama.
+        Se não puder imprimir agora, anote no bloco de notas do celular.</small></li>
+      </ol>
+      <div class="nota">
+        <b class="t">Na sua fatura</b>
+        <p>A compra aparece como <b>HTM*PORINTEIRO</b>. Anota aí para não estranhar depois.</p>
+      </div>
+    </div>
+
+    <!-- 2. A PRIMEIRA ACAO -->
+    <div class="bloco">
+      <div class="kick">Amanhã de manhã</div>
+      <h2>A sua primeira prática</h2>
+      <p>Não espere terminar de ler o guia para começar. <b>O Dia 1 pode ser amanhã</b> —
+      e leva três minutos.</p>
+
+      <div class="acao">
+        <div class="sel">Dia 1 · a luz da manhã</div>
+        <h3>Nos primeiros 30 minutos<br>depois de acordar</h3>
+        <ol>
+          <li>Abra a janela, vá até a varanda ou a porta de casa.</li>
+          <li>Deixe a luz natural bater no seu rosto por alguns minutos.</li>
+          <li>Sem óculos escuros.</li>
+        </ol>
+        <div class="why">A luz da manhã é o que ancora o seu relógio biológico e marca a hora
+        em que a melatonina vai subir hoje à noite, cerca de 14 a 16 horas depois.
+        <b>O seu sono desta noite começa aí.</b></div>
+      </div>
+    </div>
+
+    <!-- 3. WHATSAPP -->
+    <div class="bloco">
+      <div class="kick">Se você quiser</div>
+      <h2>Quer que eu te lembre<br>nos 21 dias?</h2>
+      <p>Se deixar o seu WhatsApp, eu mando uma mensagem curta nos primeiros dias — só para
+      lembrar da prática e responder dúvidas. <b>Não é obrigatório</b> e você sai quando quiser.</p>
+
+      <div class="form">
+        <form id="fw">
+          <label for="nome">Seu primeiro nome</label>
+          <input type="text" id="nome" required autocomplete="given-name" placeholder="Como você quer ser chamada">
+          <label for="fone">Seu WhatsApp</label>
+          <input type="tel" id="fone" required autocomplete="tel" placeholder="(00) 00000-0000">
+          <button type="submit" class="btn" id="bw">Quero os lembretes</button>
+          <p class="mini">Só lembretes dos 21 dias e conteúdo sobre saúde da mulher.
+          Você sai da lista com uma mensagem. Seus dados não são vendidos nem compartilhados.</p>
+        </form>
+        <div class="ok" id="okw">Pronto. Vou te mandar o primeiro lembrete amanhã de manhã.</div>
+      </div>
+    </div>
+
+    <!-- 4. OFERTA -->
+    <div class="bloco" id="blocoOferta">
+      <div class="kick">Só para quem já entrou</div>
+      <h2>Quer fazer os 21 dias<br>acompanhada?</h2>
+      <p>O guia te dá o mapa. Muita mulher lê, entende tudo — e mesmo assim não consegue
+      sustentar sozinha depois do quinto dia. <b>É para essa parte que existe o Climatério
+      Conduzido.</b></p>
+
+      <div class="oferta">
+        <div class="k">Climatério Conduzido</div>
+        <h3>21 áudios.<br>Um por dia.</h3>
+        <p>De cinco a oito minutos cada, para ouvir enquanto você faz o café, dirige ou
+        arruma a casa.</p>
+        <ul>
+          <li>Um áudio novo por dia, nos 21 dias</li>
+          <li>Grupo fechado só de mulheres nessa fase</li>
+          <li>As dúvidas mais comuns respondidas em áudio</li>
+          <li>Acesso permanente a tudo que for gravado</li>
+        </ul>
+
+        <!-- versão VENDA (aparece quando LINK_UPSELL estiver preenchido) -->
+        <div id="venda" style="display:none">
+          <a class="cta" id="ctaUp" href="#">QUERO SER ACOMPANHADA</a>
+          <div class="obs">Material educativo · não substitui consulta</div>
+        </div>
+
+        <!-- versão LISTA DE ESPERA (padrão, enquanto o produto não existe) -->
+        <div id="espera">
+          <form id="fe" style="text-align:left">
+            <label for="emailE">Seu melhor e-mail</label>
+            <input type="email" id="emailE" required autocomplete="email" placeholder="voce@email.com">
+            <button type="submit" class="cta" id="be">AVISE-ME QUANDO ABRIR</button>
+          </form>
+          <div class="obs">A primeira turma terá vagas limitadas e condição especial para quem
+          já tem o guia.</div>
+          <div class="ok" id="okEspera" style="margin-top:16px">Anotado. Você será avisada antes de todo mundo.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. SUPORTE -->
+    <div class="bloco" style="margin-bottom:0">
+      <div class="kick">Qualquer coisa</div>
+      <h2>Se algo não chegar</h2>
+      <div class="nota">
+        <b class="t">Suporte</b>
+        <p>Não recebeu o e-mail, o arquivo não abre, ou ficou qualquer dúvida sobre a compra:
+        responda o e-mail da compra ou escreva para o endereço de suporte que consta nele.
+        Respondo em até 24 horas úteis.</p>
+        <p><b>Dúvida clínica sobre o seu caso — sintoma, medicação, exame — deve ir para o seu
+        médico.</b> Este material é educativo e o suporte não faz orientação individual de saúde.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p><b>O Mapa do Climatério</b> · POR INTEIRO</p>
+    <p style="margin-top:8px">Conteúdo exclusivamente educativo. Não constitui consulta,
+    diagnóstico, prescrição ou tratamento e não substitui acompanhamento profissional.
+    Em caso de sangramento após 12 meses sem menstruar, dor no peito, falta de ar ou nódulo
+    na mama, procure atendimento imediatamente. Apoio emocional 24h, gratuito: <b>CVV 188</b>.</p>
+    <p style="margin-top:12px">© 2026 POR INTEIRO — Daniella Leal. Todos os direitos reservados.
+    Uso pessoal e intransferível. Lei 9.610/1998 e art. 184 do Código Penal.</p>
+  </footer>
+</div>
+
+<script>
+/* =====================================================================
+   CONFIGURAR ANTES DE PUBLICAR
+   ---------------------------------------------------------------------
+   LINK_UPSELL  vazio  -> o bloco mostra LISTA DE ESPERA (padrão de hoje)
+                preenchido -> vira botão de compra do Climatério Conduzido
+   ENDPOINT     vazio  -> nada é enviado; fica só no navegador e avisa no console
+   PIXEL_ID     vazio  -> nenhum pixel dispara.  ATENÇÃO: se a Hotmart já estiver
+                disparando o evento de Compra, NÃO preencha aqui — evento duplicado
+                infla o número de vendas e estraga a otimização da campanha.
+   ===================================================================== */
+var LINK_UPSELL = "";
+var ENDPOINT    = "";
+var PIXEL_ID    = "";
+
+/* ---------- upsell x lista de espera ---------- */
+if (LINK_UPSELL) {
+  document.getElementById('venda').style.display = 'block';
+  document.getElementById('espera').style.display = 'none';
+  document.getElementById('ctaUp').href = LINK_UPSELL;
+}
+
+/* ---------- envio ---------- */
+function enviar(dados, aoTerminar){
+  try{
+    var L = JSON.parse(localStorage.getItem('obrigado_leads') || '[]');
+    L.push(dados);
+    localStorage.setItem('obrigado_leads', JSON.stringify(L));
+  }catch(e){}
+
+  if(!ENDPOINT){
+    console.warn('[OBRIGADO] ENDPOINT não configurado — nada foi enviado. ' +
+                 'Preencha a variável ENDPOINT no topo do script.');
+    aoTerminar();
+    return;
+  }
+  fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},
+                  body:JSON.stringify(dados)})
+    .then(aoTerminar)
+    .catch(function(err){ console.error('[OBRIGADO] falha ao enviar:', err); aoTerminar(); });
+}
+
+document.getElementById('fw').addEventListener('submit', function(e){
+  e.preventDefault();
+  var b = document.getElementById('bw');
+  b.disabled = true; b.textContent = 'Salvando…';
+  enviar({tipo:'lembretes_whatsapp',
+          nome: document.getElementById('nome').value.trim(),
+          fone: document.getElementById('fone').value.trim(),
+          data: new Date().toISOString()},
+    function(){
+      document.getElementById('fw').style.display = 'none';
+      document.getElementById('okw').style.display = 'block';
+    });
+});
+
+var fe = document.getElementById('fe');
+if (fe) fe.addEventListener('submit', function(e){
+  e.preventDefault();
+  var b = document.getElementById('be');
+  b.disabled = true; b.textContent = 'Salvando…';
+  enviar({tipo:'espera_conduzido',
+          email: document.getElementById('emailE').value.trim(),
+          data: new Date().toISOString()},
+    function(){
+      fe.style.display = 'none';
+      document.getElementById('okEspera').style.display = 'block';
+    });
+});
+
+/* ---------- pixel (opcional) ---------- */
+if (PIXEL_ID) {
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+  (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', PIXEL_ID);
+  fbq('track', 'PageView');
+  fbq('track', 'Purchase', {value: 47.00, currency: 'BRL'});
+}
+</script>
+</body>
+</html>
