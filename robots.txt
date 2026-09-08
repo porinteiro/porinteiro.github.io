@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /quiz
+Disallow: /obrigado
+Disallow: /aguardando
+Disallow: /analise
