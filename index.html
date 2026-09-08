@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O Mapa do Climatério — POR INTEIRO</title>
+<meta name="description" content="Guia educativo sobre climatério e menopausa, escrito por uma enfermeira desde 2005. 21 dias, diário de registro e caderno para levar ao médico.">
+<link rel="canonical" href="https://porinteiro.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="POR INTEIRO">
+<meta property="og:url" content="https://porinteiro.github.io/">
+<meta property="og:title" content="O Mapa do Climatério — guia escrito por uma enfermeira">
+<meta property="og:description" content="Entenda o que está acontecendo com o seu corpo a partir dos 40 e o que fazer a partir de hoje. Guia de 37 páginas, diário de 21 dias e caderno para levar ao médico.">
+<meta property="og:image" content="https://porinteiro.github.io/img/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="O Mapa do Climatério — guia escrito por uma enfermeira">
+<meta name="twitter:description" content="Entenda o que está acontecendo com o seu corpo a partir dos 40 e o que fazer a partir de hoje. Guia de 37 páginas, diário de 21 dias e caderno para levar ao médico.">
+<meta name="twitter:image" content="https://porinteiro.github.io/img/preview.png">
+<meta name="theme-color" content="#4F5C46">
+<style>
+:root{--oliva:#6B7A5F;--oliva-esc:#4F5C46;--oliva-dark:#3B4434;--caramelo:#D4B895;
+--caramelo-esc:#B89A73;--grafite:#2C2A29;--areia:#E8E3DD;--off:#FAF9F6;--branco:#fff;
+--cinza:#6E6960;--borda:#DDD7CF;--vermelho:#A3453B;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--off);color:var(--grafite);font-family:var(--serif);font-size:18px;
+line-height:1.68;-webkit-font-smoothing:antialiased}
+.w{max-width:760px;margin:0 auto;padding:0 26px}
+.sans{font-family:var(--sans)}
+p{margin:0 0 18px}
+section{padding:64px 0}
+section.alt{background:var(--areia)}
+h2{font-family:var(--serif);font-size:36px;line-height:1.14;font-weight:400;
+letter-spacing:-.015em;margin-bottom:8px}
+h3{font-family:var(--serif);font-size:24px;font-weight:400;margin:36px 0 12px;color:var(--oliva-esc)}
+.kick{font-family:var(--sans);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;
+color:var(--caramelo-esc);font-weight:700;margin-bottom:14px}
+.lead{color:var(--cinza);font-size:19px;margin-bottom:28px}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#7A8A6D 0%,#6B7A5F 30%,#4F5C46 70%,#3B4434 100%);
+color:var(--off);padding:70px 0 0;position:relative;overflow:hidden;text-align:center}
+.hero .arc{position:absolute;width:620px;height:620px;border:1px solid rgba(212,184,149,.18);
+border-radius:50%;top:-260px;right:-220px}
+.hero .marca{font-family:var(--sans);font-size:11px;letter-spacing:.4em;text-transform:uppercase;
+color:rgba(250,249,246,.5);margin-bottom:30px;position:relative}
+.hero h1{font-size:52px;line-height:1.06;font-weight:400;color:#fff;letter-spacing:-.022em;position:relative}
+.hero h1 em{font-style:normal;color:var(--caramelo)}
+.hero .sub{font-size:21px;color:rgba(250,249,246,.9);max-width:560px;margin:24px auto 0;position:relative}
+.hero .cred{font-family:var(--sans);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+color:var(--caramelo);margin-top:26px;line-height:2;position:relative}
+.hero img{display:block;width:100%;max-width:720px;margin:22px auto -10px;position:relative}
+
+/* CTA */
+.cta{display:block;background:var(--caramelo);color:#2C2A29;text-decoration:none;
+font-family:var(--sans);font-size:19px;font-weight:700;text-align:center;
+padding:22px 26px;border-radius:12px;margin:30px auto 12px;max-width:520px;
+box-shadow:0 10px 26px rgba(107,122,95,.22);transition:.16s;border:none;cursor:pointer;width:100%}
+.cta:hover{background:#C4A681;transform:translateY(-2px)}
+.cta small{display:block;font-size:13.5px;font-weight:500;margin-top:5px;opacity:.72}
+.cta-obs{font-family:var(--sans);font-size:13.5px;color:var(--cinza);text-align:center;margin-bottom:0}
+.hero .cta-obs{color:rgba(250,249,246,.62)}
+
+/* listas / caixas */
+ul.tick{list-style:none;margin:0 0 20px}
+ul.tick li{padding:11px 0 11px 34px;position:relative;border-bottom:1px solid var(--borda);font-size:17.5px}
+ul.tick li:last-child{border-bottom:none}
+ul.tick li::before{content:"";position:absolute;left:4px;top:20px;width:14px;height:2px;background:var(--caramelo-esc)}
+.item{background:var(--branco);border:1px solid var(--borda);border-radius:12px;
+padding:24px 28px;margin:16px 0;box-shadow:0 1px 3px rgba(44,42,41,.05),0 10px 26px rgba(44,42,41,.045)}
+.item .tag{font-family:var(--sans);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+color:var(--caramelo-esc);font-weight:700;margin-bottom:7px}
+.item h4{font-family:var(--serif);font-size:24px;font-weight:400;margin-bottom:8px;color:var(--oliva-esc)}
+.item p{font-size:16.5px;color:var(--cinza);margin:0}
+.item p+p{margin-top:9px}
+.dest{background:#F1F4EF;border:1px solid #D8E0D3;border-radius:12px;padding:26px 30px;margin:26px 0}
+.dest b.t{font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+color:var(--oliva-esc);display:block;margin-bottom:9px}
+.dest p:last-child{margin-bottom:0}
+.aviso{background:#FBF3F1;border-left:3px solid var(--vermelho);padding:20px 24px;margin:26px 0;font-size:16.5px}
+.aviso b.t{font-family:var(--sans);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+color:var(--vermelho);display:block;margin-bottom:8px}
+.aviso p:last-child{margin-bottom:0}
+
+/* semanas */
+.sem{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:24px 0}
+.sem div{background:var(--branco);border:1px solid var(--borda);border-radius:11px;padding:20px 22px}
+.sem div .n{font-family:var(--sans);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+color:var(--caramelo-esc);font-weight:700}
+.sem div b{display:block;font-family:var(--serif);font-size:21px;font-weight:400;margin:5px 0 8px;color:var(--oliva-esc)}
+.sem div small{font-size:15px;color:var(--cinza);line-height:1.5;display:block}
+
+/* preço */
+.preco{background:linear-gradient(160deg,#7A8A6D,#4F5C46 65%,#3B4434);color:var(--off);
+border-radius:16px;padding:46px 36px;text-align:center;margin:32px 0}
+.preco .k{font-family:var(--sans);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--caramelo)}
+.preco .lista{text-align:left;max-width:440px;margin:26px auto 30px}
+.preco .lista li{list-style:none;padding:9px 0 9px 30px;position:relative;font-size:17px;
+color:rgba(250,249,246,.92);border-bottom:1px solid rgba(250,249,246,.14)}
+.preco .lista li:last-child{border-bottom:none}
+.preco .lista li::before{content:"";position:absolute;left:2px;top:19px;width:13px;height:2px;background:var(--caramelo)}
+.preco .val{font-family:var(--serif);font-size:66px;line-height:1;color:#fff;margin:8px 0 4px}
+.preco .val small{font-size:24px}
+.preco .par{font-family:var(--sans);font-size:15px;color:rgba(250,249,246,.72)}
+
+/* garantia */
+.gar{border:2px solid var(--caramelo);border-radius:14px;padding:30px 32px;margin:30px 0;background:var(--branco)}
+.gar .g{font-family:var(--serif);font-size:44px;color:var(--oliva);line-height:1}
+.gar h4{font-family:var(--serif);font-size:25px;font-weight:400;margin:6px 0 12px}
+
+/* faq */
+details{border-bottom:1px solid var(--borda);padding:18px 0}
+summary{font-family:var(--sans);font-size:17px;font-weight:600;cursor:pointer;list-style:none;
+display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--caramelo-esc);font-size:24px;line-height:1;flex:0 0 auto}
+details[open] summary::after{content:"–"}
+details p{margin:14px 0 0;font-size:16.5px;color:var(--cinza)}
+
+footer{background:var(--grafite);color:rgba(232,227,221,.72);padding:48px 0;font-family:var(--sans);
+font-size:13.5px;line-height:1.65}
+footer b{color:var(--areia)}
+footer .m{font-size:10.5px;letter-spacing:.4em;text-transform:uppercase;color:rgba(212,184,149,.75);margin-bottom:18px}
+
+@media(max-width:640px){
+ body{font-size:17px} .w{padding:0 20px} section{padding:48px 0}
+ .hero{padding:48px 0 0} .hero h1{font-size:36px} .hero .sub{font-size:18px}
+ h2{font-size:28px} h3{font-size:21px} .preco{padding:34px 22px} .preco .val{font-size:52px}
+ .item{padding:20px 22px} .gar{padding:24px 22px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="arc"></div>
+  <div class="w">
+    <div class="marca">Por Inteiro</div>
+    <h1>Você não está<br>ficando velha.<br><em>Você está mudando<br>de fase.</em></h1>
+    <div class="sub">E ninguém te deu o mapa.</div>
+    <div class="cred">Guia educativo · escrito por uma enfermeira<br>desde 2005 · COREN ativo</div>
+    <img src="/img/mockup.png" alt="O Mapa do Climatério, Diário do Climatério, Caderno da Consulta e Cardápio 21 Dias">
+  </div>
+</div>
+
+<!-- RECONHECIMENTO -->
+<section>
+ <div class="w">
+  <div class="kick">Se você reconhece isto</div>
+  <h2>O sono que não repara.<br>A palavra que some.<br>A roupa que deixou de servir.</h2>
+  <p class="lead" style="margin-top:20px">E aquela frase que milhares de mulheres repetem, quase
+  sempre com as mesmas palavras, em consultórios pelo Brasil inteiro:</p>
+  <p style="font-size:24px;color:var(--oliva-esc);font-style:italic">"Eu não sou mais a mesma,
+  e ninguém me explica o que está acontecendo."</p>
+  <p>A irritação que chega sem motivo. O calor que sobe do nada no meio de uma reunião.
+  As juntas doendo de manhã. A vontade que sumiu — e a vergonha de dizer isso em voz alta.</p>
+  <p>A maioria das mulheres trata cada uma dessas coisas <b>separadamente</b>. Um chá para o
+  sono. Uma dieta para o peso. Paciência para o humor. E como cada peça é tratada sozinha,
+  ninguém nunca junta tudo e diz a frase que muda o jogo:</p>
+  <p style="font-size:24px;color:var(--oliva-esc)"><b>isso tem um nome, e é tudo a mesma coisa.</b></p>
+ </div>
+</section>
+
+<!-- O VILAO -->
+<section class="alt">
+ <div class="w">
+  <div class="kick">O verdadeiro vilão</div>
+  <h2>Não é a sua idade.<br>É o silêncio.</h2>
+  <p class="lead">Chama-se <b>climatério</b> — e não é a menopausa. A menopausa é um único dia,
+  a data da última menstruação. O climatério é a fase inteira ao redor dela, e pode começar
+  por volta dos 40 e durar <b>mais de dez anos</b>.</p>
+  <p>Nessa fase o estrogênio começa a oscilar. E ele não cuidava só da menstruação: participava
+  da regulação da temperatura do corpo, do sono profundo, do humor, da memória, do osso,
+  da pele e do músculo.</p>
+  <p>É por isso que os sintomas parecem não ter relação nenhuma entre si. <b>Eles têm.</b></p>
+  <p>E é por isso que o que sempre funcionou para você parou de funcionar. Você não fracassou.
+  <b>O corpo mudou as regras — e ninguém te entregou o manual novo.</b></p>
+ </div>
+</section>
+
+<!-- O QUE E -->
+<section>
+ <div class="w">
+  <div class="kick">O que você recebe</div>
+  <h2>Quatro materiais.<br>Um mapa completo.</h2>
+
+  <div class="item">
+    <div class="tag">Guia principal · 37 páginas</div>
+    <h4>O Mapa do Climatério</h4>
+    <p>Cinco partes. <b>Entender</b> o que está acontecendo no seu corpo e por quê.
+    <b>Organizar</b> a rotina em 21 dias, um dia por vez. <b>O que também sustenta</b> —
+    os vínculos que se perdem nessa fase e a música como ferramenta.
+    <b>Vigiar</b> os sinais que não são do climatério e pedem médico agora.
+    E <b>a consulta</b>, que é onde tudo isso desemboca.</p>
+  </div>
+
+  <div class="item">
+    <div class="tag">Bônus 1 · para imprimir</div>
+    <h4>Diário do Climatério</h4>
+    <p>21 dias de registro em menos de um minuto por dia: sono, despertares, ondas de calor,
+    gatilhos. É o que transforma "ando cansada" em informação que o seu médico consegue usar.</p>
+  </div>
+
+  <div class="item">
+    <div class="tag">Bônus 2 · para levar na bolsa</div>
+    <h4>Caderno da Consulta</h4>
+    <p>O que levar, como descrever cada sintoma, e <b>nove perguntas já escritas</b> com espaço
+    para anotar a resposta ali mesmo — inclusive a que a maioria das mulheres nunca fez.</p>
+  </div>
+
+  <div class="dest">
+    <b class="t">O que torna este guia diferente de todos os outros</b>
+    <p>A maioria das mulheres não perde a consulta por falta de médico. Perde por
+    <b>não saber descrever o que sente nem o que pedir</b>. Chega, tem quinze minutos, diz
+    "ando cansada" — e sai com uma receita e nenhuma explicação.</p>
+    <p>Este guia não trata e não substitui o seu médico. <b>Ele faz outra coisa: te leva até
+    ele preparada</b>, com 21 dias de registro na mão e as perguntas escritas. É uma consulta
+    completamente diferente.</p>
+  </div>
+ </div>
+</section>
+
+<!-- 21 DIAS -->
+<section class="alt">
+ <div class="w">
+  <div class="kick">Como funciona</div>
+  <h2>21 dias. Uma prática por dia.</h2>
+  <p class="lead">Nada de plano impossível. Cada dia traz <b>uma única prática</b>, que entra e
+  não sai — no dia 3 você está fazendo três, no dia 7 as sete. Leva cinco minutos para ler e
+  cabe na sua rotina como ela já é.</p>
+
+  <div class="sem">
+    <div><span class="n">Dias 1 a 7</span><b>O sono</b>
+      <small>Porque dormir mal piora todos os outros sintomas. A luz da manhã, a cafeína,
+      o quarto, a respiração — e, no dia 7, a primeira leitura do seu próprio diário.</small></div>
+    <div><span class="n">Dias 8 a 14</span><b>O calor e a energia</b>
+      <small>Caçar os <i>seus</i> gatilhos, que não são iguais aos das outras. A técnica do
+      primeiro sinal, a caminhada, o álcool sob observação.</small></div>
+    <div><span class="n">Dias 15 a 21</span><b>O corpo que sustenta</b>
+      <small>Proteína, cálcio, força sem academia. E o dia 21, que é o mais importante de
+      todos: <b>marcar a consulta</b>.</small></div>
+  </div>
+
+  <div class="dest">
+    <b class="t">Ao fim de cada semana — "Para a alma"</b>
+    <p>Um bloco curto, separado do conteúdo, com uma passagem bíblica e uma reflexão para o
+    que essa fase mexe por dentro: o cansaço que dormir não resolve, a culpa depois da
+    irritação, e a mulher que não está perdendo nada — está mudando de fase.</p>
+    <p><b>É opcional.</b> Vem em bloco próprio, ao fim de cada semana. Se fé não faz parte da
+    sua vida, pule sem culpa: você não perde uma linha do conteúdo.</p>
+  </div>
+ </div>
+</section>
+
+<!-- PARA QUEM -->
+<section>
+ <div class="w">
+  <div class="kick">Antes de comprar</div>
+  <h2>Para quem é —<br>e para quem não é</h2>
+  <h3>É para você se</h3>
+  <ul class="tick">
+    <li>Você tem entre 38 e 60 anos e sente que o corpo mudou as regras</li>
+    <li>Quer <b>entender</b> o que está acontecendo, não ouvir mais uma promessa</li>
+    <li>Já ouviu "é da idade, vai passar" e saiu da consulta sem explicação</li>
+    <li>Quer chegar no médico sabendo o que dizer e o que perguntar</li>
+    <li>Prefere hábito e informação a fórmula milagrosa</li>
+  </ul>
+  <h3>Não é para você se</h3>
+  <ul class="tick">
+    <li>Você procura um tratamento, uma prescrição ou uma dose para tomar</li>
+    <li>Espera perder peso ou acabar com um sintoma em prazo determinado</li>
+    <li>Quer algo que substitua a consulta médica — <b>este guia faz o contrário</b></li>
+  </ul>
+ </div>
+</section>
+
+<!-- AUTORA -->
+<section class="alt">
+ <div class="w">
+  <div class="kick">Quem escreveu</div>
+  <h2>Uma enfermeira,<br>desde 2005.</h2>
+  <p class="lead">Atendendo mulheres entre 40 e 60 anos, ouvi aquela primeira frase mais vezes
+  do que consigo contar.</p>
+  <p>Elas chegavam depois de meses tentando resolver sozinhas. Tinham cortado o glúten, tomado
+  chá, comprado creme, brigado com a balança. Algumas tinham ido ao médico e saído em oito
+  minutos com uma receita e nenhuma explicação. Outras tinham desistido de ir, porque já
+  ouviram que era da idade.</p>
+  <p><b>Este guia é a explicação que faltou.</b> Ele não trata — não é para isso que serve um
+  livro. Ele conta o que está acontecendo, ajuda a organizar a rotina, mostra o que vigiar,
+  e te leva à consulta preparada.</p>
+  <p class="sans" style="font-size:15px;color:var(--cinza)">Daniella Leal · enfermeira ·
+  COREN ativo</p>
+ </div>
+</section>
+
+<!-- PRECO -->
+<section>
+ <div class="w">
+  <div class="preco">
+    <div class="k">Acesso imediato</div>
+    <ul class="lista">
+      <li><b>O Mapa do Climatério</b> — guia de 37 páginas</li>
+      <li><b>Diário do Climatério</b> — 21 dias para imprimir</li>
+      <li><b>Caderno da Consulta</b> — com 9 perguntas prontas</li>
+      <li>Três blocos <b>"Para a alma"</b> — opcionais</li>
+      <li>Arquivo em PDF, no seu e-mail, em segundos</li>
+      <li><b>30 dias de garantia</b> incondicional</li>
+    </ul>
+    <div class="val"><small>R$</small> 47<small>,00</small></div>
+    <div class="par">à vista no Pix · ou em até 3x no cartão</div>
+    <a class="cta" id="cta1" href="#">QUERO O MEU MAPA<small>acesso imediato · 30 dias de garantia</small></a>
+    <p class="cta-obs" style="color:rgba(250,249,246,.62)">Compra segura processada pela Hotmart</p>
+  </div>
+
+  <div class="gar">
+    <div class="g">30</div>
+    <h4>dias para decidir, sem risco</h4>
+    <p style="font-size:16.5px;color:var(--cinza);margin:0">Você tem 30 dias para ler, fazer as
+    três semanas e levar o diário ao seu médico. Se em qualquer momento desse período achar que
+    não é para você, responde o e-mail da compra com a palavra <b>reembolso</b> e devolvemos
+    100%. Sem pergunta e sem burocracia.</p>
+  </div>
+ </div>
+</section>
+
+<!-- FAQ -->
+<section class="alt">
+ <div class="w">
+  <div class="kick">Perguntas</div>
+  <h2>O que costumam<br>me perguntar</h2>
+
+  <details><summary>Eu ainda menstruo. Isso é para mim?</summary>
+    <p>Provavelmente sim. A perimenopausa — a parte mais turbulenta do climatério — acontece
+    justamente <b>enquanto a menstruação ainda vem</b>. Muita mulher passa anos achando que o
+    problema é outro porque continua menstruando.</p></details>
+
+  <details><summary>Isso substitui ir ao médico?</summary>
+    <p>Não, e faz exatamente o contrário. O guia foi escrito para te levar à consulta
+    preparada — tem uma parte inteira sobre isso e outra sobre os sinais que exigem
+    avaliação médica imediata.</p></details>
+
+  <details><summary>Tem indicação de remédio, hormônio ou suplemento?</summary>
+    <p>Não, e desconfie de qualquer material que tenha. Dose depende dos seus exames, do seu
+    histórico e dos seus riscos — é decisão de quem examinou <i>você</i>. O guia te ajuda a
+    ter essa conversa com o seu médico, não a pular ela.</p></details>
+
+  <details><summary>Eu não sou religiosa. Vou me incomodar?</summary>
+    <p>Não. Os três blocos "Para a alma" ficam <b>separados</b>, ao fim de cada semana, e são
+    claramente marcados. Pule e você não perde uma linha do conteúdo.</p></details>
+
+  <details><summary>Como recebo?</summary>
+    <p>No seu e-mail, em segundos, logo após o pagamento aprovado. É um PDF que você lê no
+    celular, no computador ou imprime. Não tem plataforma para entrar nem senha para lembrar.</p></details>
+
+  <details><summary>Preciso mudar minha alimentação ou fazer academia?</summary>
+    <p>Não. As práticas foram escolhidas para caber na sua rotina como ela já é — a maior
+    parte custa zero e leva minutos. Não tem dieta, não tem corte, não tem academia.</p></details>
+
+  <details><summary>E se eu não gostar?</summary>
+    <p>Você tem 30 dias e devolvemos 100%, sem pergunta.</p></details>
+ </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section>
+ <div class="w" style="text-align:center">
+  <h2>Atravessar com mapa<br>é diferente de<br>atravessar no escuro.</h2>
+  <p class="lead" style="max-width:540px;margin:22px auto 0">Você não está ficando velha.
+  Está mudando de fase — e essa fase pode durar mais de dez anos. Vale entender o que está
+  acontecendo.</p>
+  <a class="cta" id="cta2" href="#">QUERO O MEU MAPA — R$ 47<small>acesso imediato · 30 dias de garantia</small></a>
+  <p class="cta-obs">Compra segura processada pela Hotmart</p>
+
+  <div class="aviso" style="text-align:left;margin-top:40px">
+    <b class="t">Aviso importante</b>
+    <p>Conteúdo <b>exclusivamente educativo e informativo</b> sobre hábitos de bem-estar, sono,
+    alimentação e organização da rotina. Não constitui consulta, diagnóstico, prescrição ou
+    tratamento, não indica dose de medicamento, hormônio ou suplemento, e <b>não substitui</b>
+    o acompanhamento de médico ou outro profissional habilitado. Resultados individuais variam.</p>
+    <p>Se você faz uso de medicação contínua, está gestante, ou tem qualquer condição de saúde
+    diagnosticada, converse com o seu médico antes de adotar mudanças de rotina. Em caso de
+    sangramento após 12 meses sem menstruar, dor no peito, falta de ar ou nódulo na mama,
+    <b>procure atendimento imediatamente</b>. Apoio emocional 24h, gratuito: <b>CVV 188</b>.</p>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="w">
+  <div class="m">Por Inteiro</div>
+  <p><b>O Mapa do Climatério</b> — guia educativo sobre climatério e menopausa.</p>
+  <p>© 2026 POR INTEIRO — Daniella Leal. Todos os direitos reservados. Material licenciado para
+  uso pessoal e intransferível. É proibida a reprodução, cópia ou compartilhamento, total ou
+  parcial, por qualquer meio — Lei nº 9.610/1998 e art. 184 do Código Penal.</p>
+ </div>
+</footer>
+
+<script>
+/* =====================================================================
+   CONFIGURAR ANTES DE PUBLICAR
+   Cole abaixo o link de checkout da Hotmart (pay.hotmart.com/...).
+   Enquanto estiver vazio, os botões avisam em vez de levar a lugar nenhum.
+   ===================================================================== */
+var LINK_CHECKOUT = "https://pay.hotmart.com/E107511444D";
+
+['cta1','cta2'].forEach(function(id){
+  var b=document.getElementById(id);
+  if(!b) return;
+  if(LINK_CHECKOUT){ b.href=LINK_CHECKOUT; }
+  else{
+    b.addEventListener('click',function(e){
+      e.preventDefault();
+      console.warn('[PÁGINA] LINK_CHECKOUT não configurado.');
+      alert('Link do checkout ainda não configurado.\n\nCole o link da Hotmart na variável LINK_CHECKOUT, no topo do script desta página.');
+    });
+  }
+});
+</script>
+</body>
+</html>
