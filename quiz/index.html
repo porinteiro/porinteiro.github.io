@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantos sinais você reconhece? — POR INTEIRO</title>
+<link rel="canonical" href="https://porinteiro.github.io/quiz">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="POR INTEIRO">
+<meta property="og:url" content="https://porinteiro.github.io/quiz">
+<meta property="og:title" content="Quantos sinais do climatério você reconhece?">
+<meta property="og:description" content="Sete perguntas rápidas. No fim você recebe um material gratuito que explica o que cada sinal costuma significar. Escrito por uma enfermeira desde 2005.">
+<meta property="og:image" content="https://porinteiro.github.io/img/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quantos sinais do climatério você reconhece?">
+<meta name="twitter:description" content="Sete perguntas rápidas. No fim você recebe um material gratuito que explica o que cada sinal costuma significar. Escrito por uma enfermeira desde 2005.">
+<meta name="twitter:image" content="https://porinteiro.github.io/img/preview.png">
+<meta name="theme-color" content="#4F5C46">
+<style>
+:root{--oliva:#6B7A5F;--oliva-esc:#4F5C46;--caramelo:#D4B895;--caramelo-esc:#B89A73;
+--grafite:#2C2A29;--areia:#E8E3DD;--off:#FAF9F6;--branco:#fff;--cinza:#6E6960;--borda:#DDD7CF;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--areia);color:var(--grafite);font-family:var(--sans);
+font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+display:flex;justify-content:center;padding:0}
+.app{width:100%;max-width:640px;background:var(--off);min-height:100vh;
+box-shadow:0 0 60px rgba(44,42,41,.08)}
+
+/* topo */
+.topo{background:linear-gradient(157deg,#7A8A6D,#6B7A5F 34%,#4F5C46 78%);
+color:var(--off);padding:44px 30px 38px;text-align:center;position:relative;overflow:hidden}
+.topo .arc{position:absolute;width:300px;height:300px;border:1px solid rgba(212,184,149,.22);
+border-radius:50%;top:-120px;right:-110px}
+.topo .marca{font-size:10px;letter-spacing:.38em;text-transform:uppercase;
+color:rgba(250,249,246,.55);margin-bottom:22px;position:relative}
+.topo h1{font-family:var(--serif);font-size:33px;font-weight:400;line-height:1.12;
+color:#fff;position:relative}
+.topo p{font-size:15px;color:rgba(250,249,246,.85);margin-top:14px;position:relative;
+max-width:400px;margin-left:auto;margin-right:auto}
+.topo .cred{font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+color:#D4B895;margin-top:24px;position:relative}
+
+/* progresso */
+.prog{height:4px;background:var(--areia)}
+.prog i{display:block;height:100%;background:var(--caramelo);width:0;transition:width .35s ease}
+
+/* corpo */
+.corpo{padding:34px 30px 44px}
+.passo{display:none}.passo.on{display:block;animation:e .35s ease}
+@keyframes e{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.conta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+color:var(--caramelo-esc);font-weight:700;margin-bottom:12px}
+h2{font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.24;margin-bottom:8px}
+.aj{color:var(--cinza);font-size:14.5px;margin-bottom:24px}
+.ops{display:flex;flex-direction:column;gap:11px}
+.op{background:var(--branco);border:1.5px solid var(--borda);border-radius:11px;
+padding:16px 19px;font-size:16px;cursor:pointer;text-align:left;font-family:inherit;
+color:var(--grafite);transition:.15s;line-height:1.45}
+.op:hover{border-color:var(--caramelo);background:#FFFDFA}
+.op:active{transform:scale(.99)}
+.voltar{background:none;border:none;color:var(--cinza);font-size:14px;font-family:inherit;
+cursor:pointer;margin-top:26px;padding:6px 0;text-decoration:underline}
+
+/* form */
+.campo{margin-bottom:15px}
+label{display:block;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;
+color:var(--oliva-esc);font-weight:700;margin-bottom:6px}
+input{width:100%;padding:14px 16px;border:1.5px solid var(--borda);border-radius:10px;
+font-size:16px;font-family:inherit;background:var(--branco);color:var(--grafite)}
+input:focus{outline:none;border-color:var(--oliva)}
+.btn{width:100%;background:var(--oliva);color:#fff;border:none;border-radius:10px;
+padding:17px;font-size:16.5px;font-weight:600;font-family:inherit;cursor:pointer;
+margin-top:8px;transition:.15s}
+.btn:hover{background:var(--oliva-esc)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.mini{font-size:12.5px;color:var(--cinza);margin-top:13px;line-height:1.5}
+
+/* resultado */
+.res-n{font-family:var(--serif);font-size:64px;line-height:1;color:var(--oliva);margin-bottom:4px}
+.res-n small{font-size:20px;color:var(--cinza)}
+.faixa{background:var(--branco);border:1px solid var(--borda);border-radius:12px;
+padding:22px 24px;margin:20px 0}
+.faixa h3{font-family:var(--serif);font-size:21px;font-weight:400;margin-bottom:10px;color:var(--oliva-esc)}
+.faixa p{font-size:15px;color:var(--cinza);margin-bottom:11px}
+.faixa p:last-child{margin-bottom:0}
+.marcados{list-style:none;margin:16px 0}
+.marcados li{padding:8px 0 8px 24px;position:relative;font-size:15px;border-bottom:1px solid var(--borda)}
+.marcados li::before{content:"—";position:absolute;left:0;color:var(--caramelo-esc)}
+.alerta{background:#FBF3F1;border-left:3px solid #A3453B;padding:16px 19px;
+border-radius:0 8px 8px 0;margin:20px 0;font-size:14.5px;line-height:1.55}
+.alerta b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+color:#A3453B;margin-bottom:7px}
+.oferta{background:linear-gradient(157deg,#7A8A6D,#4F5C46);color:var(--off);
+border-radius:13px;padding:26px 24px;margin:26px 0 0;text-align:center}
+.oferta h3{font-family:var(--serif);font-size:23px;font-weight:400;color:#fff;margin-bottom:10px}
+.oferta p{font-size:14.5px;color:rgba(250,249,246,.86);margin-bottom:16px}
+.oferta .btn{background:var(--caramelo);color:#2C2A29}
+.oferta .btn:hover{background:#C4A681}
+.oferta .obs{font-size:12px;color:rgba(250,249,246,.6);margin-top:12px}
+
+.disc{font-size:12.5px;color:var(--cinza);line-height:1.55;background:var(--areia);
+padding:18px 20px;border-radius:9px;margin-top:26px}
+.disc b{color:var(--grafite)}
+footer{padding:22px 30px 34px;text-align:center;font-size:11.5px;color:var(--cinza);line-height:1.6}
+@media(max-width:520px){.topo{padding:36px 22px 32px}.topo h1{font-size:28px}
+.corpo{padding:28px 22px 38px}h2{font-size:23px}.res-n{font-size:54px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topo">
+    <div class="arc"></div>
+    <div class="marca">Por Inteiro</div>
+    <h1>Quantos desses sinais<br>você reconhece?</h1>
+    <p>Sete perguntas rápidas. No fim, você recebe um material gratuito que explica o que
+    cada um deles costuma significar.</p>
+    <div class="cred">Escrito por uma enfermeira · desde 2005</div>
+  </div>
+  <div class="prog"><i id="barra"></i></div>
+
+  <div class="corpo">
+    <div id="perguntas"></div>
+
+    <!-- CAPTURA -->
+    <div class="passo" id="captura">
+      <div class="conta">Último passo</div>
+      <h2>Para onde eu envio o seu resultado?</h2>
+      <p class="aj">Você recebe agora, por e-mail: o seu resultado detalhado e o
+      <b>mini-guia dos sinais do climatério</b>, gratuito, em PDF.</p>
+      <form id="form">
+        <div class="campo"><label for="nome">Seu primeiro nome</label>
+          <input type="text" id="nome" name="nome" required autocomplete="given-name" placeholder="Como você quer ser chamada"></div>
+        <div class="campo"><label for="email">Seu melhor e-mail</label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="voce@email.com"></div>
+        <div class="campo"><label for="fone">WhatsApp (opcional)</label>
+          <input type="tel" id="fone" name="fone" autocomplete="tel" placeholder="(00) 00000-0000"></div>
+        <button type="submit" class="btn" id="enviar">Ver o meu resultado</button>
+        <p class="mini">Ao continuar, você concorda em receber o material e conteúdos sobre
+        saúde da mulher. Pode sair da lista a qualquer momento, com um clique.
+        Seus dados não são vendidos nem compartilhados.</p>
+      </form>
+    </div>
+
+    <!-- RESULTADO -->
+    <div class="passo" id="resultado">
+      <div class="conta">Seu resultado</div>
+      <div class="res-n"><span id="pontos">0</span><small> de 7 sinais</small></div>
+      <div id="faixa"></div>
+      <div id="lista-marcados"></div>
+      <div class="alerta">
+        <b>Isto não é um diagnóstico</b>
+        Este questionário <b>não diz em que fase você está</b> e não substitui avaliação
+        profissional. Vários outros quadros — tireoide, anemia, deficiência de vitaminas,
+        ansiedade, apneia do sono — produzem sinais muito parecidos. Só uma consulta, com
+        exame, diferencia. <b>Se você reconheceu sinais, o próximo passo é marcar essa
+        consulta.</b>
+      </div>
+      <div class="oferta">
+        <h3>O Mapa do Climatério</h3>
+        <p>O guia completo de 30 páginas, com o <b>Diário de 21 dias</b> e o
+        <b>Caderno da Consulta</b> — para você chegar no médico sabendo exatamente o que
+        dizer e o que perguntar.</p>
+        <button class="btn" id="cta">Quero conhecer o guia</button>
+        <div class="obs">Material educativo · não substitui consulta</div>
+      </div>
+      <div class="disc">
+        <b>Aviso.</b> Conteúdo educativo sobre hábitos de bem-estar. Não constitui consulta,
+        diagnóstico, prescrição ou tratamento. Em caso de sangramento após 12 meses sem
+        menstruar, dor no peito, falta de ar, nódulo na mama ou pensamentos de se machucar,
+        <b>procure atendimento imediatamente</b> — apoio emocional 24h, gratuito: <b>CVV 188</b>.
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2026 POR INTEIRO — Daniella Leal. Todos os direitos reservados.</footer>
+</div>
+
+<script>
+/* =====================================================================
+   INTEGRAÇÃO PENDENTE — configurar antes de publicar
+   Coloque abaixo o endpoint da ferramenta de e-mail (Kiwify, MailerLite,
+   ActiveCampaign, Brevo…) e o link do checkout. Enquanto ENDPOINT estiver
+   vazio, o lead é apenas guardado no navegador e um aviso aparece no
+   console — NADA é enviado para lugar nenhum.
+   ===================================================================== */
+var ENDPOINT = "";              // ex.: "https://api.suaferramenta.com/forms/xxxx"
+var LINK_CHECKOUT = "https://pay.hotmart.com/E107511444D";
+
+var PERGUNTAS = [
+  {t:"Como você tem dormido nos últimos meses?",
+   ops:[["Durmo bem, acordo descansada",0],["Demoro a pegar no sono",1],
+        ["Acordo no meio da noite e custo a voltar",1],["Durmo a noite toda e acordo cansada",1]]},
+  {t:"Você tem sentido calor de repente, sem motivo aparente?",
+   ops:[["Nunca",0],["Raramente",1],["Algumas vezes por semana",1],["Várias vezes por dia",1]]},
+  {t:"E suor durante a noite?",
+   ops:[["Não",0],["Às vezes",1],["Com frequência, chego a trocar de roupa",1]]},
+  {t:"Como tem estado o seu humor?",
+   ops:[["Como sempre foi",0],["Mais irritada que o normal",1],
+        ["Choro com facilidade por coisas pequenas",1],["Não me reconheço",1]]},
+  {t:"Você tem esquecido palavras ou perdido o fio do que estava dizendo?",
+   ops:[["Não",0],["De vez em quando",1],["Com frequência, e isso me incomoda",1]]},
+  {t:"Alguma dessas mudanças aconteceu no seu corpo no último ano?",
+   ops:[["Nenhuma",0],["Ganhei peso, principalmente na barriga",1],
+        ["A roupa deixou de servir sem eu mudar nada",1],["Dor ou rigidez nas juntas ao acordar",1]]},
+  {t:"E sobre a menstruação?",
+   ops:[["Continua regular como sempre",0],["Ficou irregular — mais curta, mais longa, falha",1],
+        ["Mudou de intensidade",1],["Parei de menstruar há menos de 12 meses",1],
+        ["Não menstruo há mais de 12 meses",1]]}
+];
+
+var FAIXAS = [
+  {min:0,max:1,t:"Poucos sinais por enquanto",
+   p:["Você reconheceu poucos dos sinais que costumam aparecer nessa fase. Isso é uma boa notícia — e também um bom momento para se informar com calma, antes de precisar.",
+      "O climatério pode começar por volta dos 40 e durar mais de dez anos. Entender agora o que esperar faz muita diferença depois."]},
+  {min:2,max:3,t:"Alguns sinais reconhecidos",
+   p:["Você marcou alguns dos sinais que costumam aparecer nessa fase da vida da mulher.",
+      "Vale observar: eles chegam separados e por isso quase ninguém junta as peças. Anotar o que acontece por algumas semanas ajuda muito — e é o que transforma uma consulta comum numa consulta útil."]},
+  {min:4,max:5,t:"Vários sinais reconhecidos",
+   p:["Você marcou vários dos sinais. Muita mulher nessa situação vem tratando cada um deles separadamente — um chá para o sono, uma dieta para o peso, paciência para o humor — sem que ninguém junte tudo.",
+      "<b>Este é um bom momento para marcar uma consulta.</b> E vale ir preparada: com um registro do que você sente, há quanto tempo e com que frequência."]},
+  {min:6,max:99,t:"A maioria dos sinais",
+   p:["Você reconheceu a maior parte dos sinais que costumam aparecer nessa fase.",
+      "<b>Não deixe para depois: marque uma consulta.</b> Leve um registro do que sente, há quanto tempo e com que frequência — e peça ao seu médico que investigue também outras causas possíveis, como tireoide, anemia e vitamina D, antes de atribuir tudo a essa fase.",
+      "Você não está exagerando, e isso não é 'da idade'. Tem nome e tem o que fazer."]}
+];
+
+var i=0, respostas=[];   // respostas[n] = {v:0|1, tx:'...'}
+var cont=document.getElementById('perguntas');
+
+PERGUNTAS.forEach(function(q,n){
+  var d=document.createElement('div');
+  d.className='passo'+(n===0?' on':''); d.id='q'+n;
+  var h='<div class="conta">Pergunta '+(n+1)+' de '+PERGUNTAS.length+'</div><h2>'+q.t+'</h2><div class="ops">';
+  q.ops.forEach(function(o,k){h+='<button class="op" data-v="'+o[1]+'" data-tx="'+o[0].replace(/"/g,'&quot;')+'">'+o[0]+'</button>'});
+  h+='</div>'+(n>0?'<button class="voltar">← voltar</button>':'');
+  d.innerHTML=h; cont.appendChild(d);
+});
+
+function mostra(id){
+  document.querySelectorAll('.passo').forEach(function(p){p.classList.remove('on')});
+  document.getElementById(id).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function barra(n){
+  document.getElementById('barra').style.width=(n/(PERGUNTAS.length+1)*100)+'%';
+}
+barra(0);
+
+function totais(){
+  var p=0, m=[];
+  respostas.forEach(function(r){ if(r && r.v>0){ p++; m.push(r.tx) } });
+  return {pontos:p, marcados:m};
+}
+
+cont.addEventListener('click',function(e){
+  var b=e.target.closest('.op');
+  if(b){
+    respostas[i]={v:parseInt(b.dataset.v,10), tx:b.dataset.tx};
+    i++; barra(i);
+    if(i<PERGUNTAS.length){mostra('q'+i)} else {mostra('captura')}
+    return;
+  }
+  if(e.target.classList.contains('voltar')){
+    if(i<=0) return;
+    i--; respostas[i]=null;   // desfaz apenas a resposta desta pergunta
+    barra(i); mostra('q'+i);
+  }
+});
+
+document.getElementById('form').addEventListener('submit',function(e){
+  e.preventDefault();
+  var T=totais();
+  var lead={nome:document.getElementById('nome').value.trim(),
+            email:document.getElementById('email').value.trim(),
+            fone:document.getElementById('fone').value.trim(),
+            pontos:T.pontos, sinais:T.marcados, data:new Date().toISOString()};
+  var bt=document.getElementById('enviar'); bt.disabled=true; bt.textContent='Enviando…';
+
+  function segue(){
+    try{
+      var L=JSON.parse(localStorage.getItem('leads_quiz')||'[]');
+      L.push(lead); localStorage.setItem('leads_quiz',JSON.stringify(L));
+    }catch(err){}
+    render(lead); barra(PERGUNTAS.length+1); mostra('resultado');
+  }
+
+  if(!ENDPOINT){
+    console.warn('[QUIZ] ENDPOINT não configurado — o lead NÃO foi enviado a lugar nenhum. '+
+      'Configure a variável ENDPOINT no topo do script antes de publicar.');
+    segue(); return;
+  }
+  fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead)})
+    .then(segue).catch(function(err){console.error('[QUIZ] falha ao enviar:',err); segue()});
+});
+
+function render(lead){
+  var T=totais();
+  document.getElementById('pontos').textContent=T.pontos;
+  var f=FAIXAS.filter(function(x){return T.pontos>=x.min&&T.pontos<=x.max})[0];
+  document.getElementById('faixa').innerHTML=
+    '<div class="faixa"><h3>'+(lead.nome?lead.nome+', ':'')+f.t.charAt(0).toLowerCase()+f.t.slice(1)+'</h3>'+
+    f.p.map(function(p){return '<p>'+p+'</p>'}).join('')+'</div>';
+  if(T.marcados.length){
+    document.getElementById('lista-marcados').innerHTML=
+      '<h3 style="font-family:var(--serif);font-weight:400;font-size:19px;margin:24px 0 6px">O que você marcou</h3>'+
+      '<ul class="marcados">'+T.marcados.map(function(m){return '<li>'+m+'</li>'}).join('')+'</ul>';
+  }
+}
+
+document.getElementById('cta').addEventListener('click',function(){
+  if(LINK_CHECKOUT){location.href=LINK_CHECKOUT}
+  else{alert('Link do checkout ainda não configurado.\n\nDefina a variável LINK_CHECKOUT no topo do script depois de cadastrar o produto na Kiwify.')}
+});
+</script>
+</body>
+</html>
