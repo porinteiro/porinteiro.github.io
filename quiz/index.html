@@ -188,7 +188,35 @@ footer{padding:22px 30px 34px;text-align:center;font-size:11.5px;color:var(--cin
    vazio, o lead é apenas guardado no navegador e um aviso aparece no
    console — NADA é enviado para lugar nenhum.
    ===================================================================== */
-var ENDPOINT = "";              // ex.: "https://api.suaferramenta.com/forms/xxxx"
+/* ---------- envio para a Brevo ----------
+   A Brevo espera form-urlencoded, não JSON. E a resposta é bloqueada por CORS,
+   então usamos no-cors: o POST chega, mas não conseguimos ler o retorno.
+   Por isso o sucesso é otimista — o lead também fica salvo no navegador. */
+var ENDPOINT   = "https://680550e2.sibforms.com/serve/MUIFACjPaJtD8BPfJBg1OZNfFQgbZ-E3DDP1SFRl20bbyZuKgFA-O3ZMoDGetPUMrvhsjogHMut9_675GJ1QmXdTnJj1PuJ0t4WEpirNMbcln3ut1Cc82W-NEvwo5YaFAH8iIoFbEvnGpfr2t8mvOvg1U8BIcHJcvTMQKTZDicOOW9xNGLpX8YJ8UUUlUxNtChHpl02xXHcfhFeqMQ==";
+var CAMPO_EMAIL = "EMAIL";
+var CAMPO_NOME  = "NOME";
+var CAMPO_SMS   = "SMS";
+
+function enviarBrevo(dados, aoTerminar){
+  try{
+    var L = JSON.parse(localStorage.getItem('leads_porinteiro') || '[]');
+    L.push(dados); localStorage.setItem('leads_porinteiro', JSON.stringify(L));
+  }catch(e){}
+
+  if(!ENDPOINT){ console.warn('[POR INTEIRO] ENDPOINT vazio — nada enviado.'); aoTerminar(); return; }
+
+  var corpo = new URLSearchParams();
+  if(dados.email) corpo.append(CAMPO_EMAIL, dados.email);
+  if(dados.nome)  corpo.append(CAMPO_NOME,  dados.nome);
+  if(dados.fone)  corpo.append(CAMPO_SMS,   dados.fone);
+  corpo.append('email_address_check','');
+  corpo.append('locale','pt');
+
+  fetch(ENDPOINT, {method:'POST', mode:'no-cors',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: corpo.toString()})
+    .then(function(){ aoTerminar(); })
+    .catch(function(err){ console.error('[POR INTEIRO] falha no envio:', err); aoTerminar(); });
+}              // ex.: "https://api.suaferramenta.com/forms/xxxx"
 var LINK_CHECKOUT = "https://pay.hotmart.com/E107511444D";
 
 var PERGUNTAS = [
@@ -289,13 +317,7 @@ document.getElementById('form').addEventListener('submit',function(e){
     render(lead); barra(PERGUNTAS.length+1); mostra('resultado');
   }
 
-  if(!ENDPOINT){
-    console.warn('[QUIZ] ENDPOINT não configurado — o lead NÃO foi enviado a lugar nenhum. '+
-      'Configure a variável ENDPOINT no topo do script antes de publicar.');
-    segue(); return;
-  }
-  fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead)})
-    .then(segue).catch(function(err){console.error('[QUIZ] falha ao enviar:',err); segue()});
+  enviarBrevo(lead, segue);
 });
 
 function render(lead){
