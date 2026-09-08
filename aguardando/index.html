@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aguardando pagamento — O Mapa do Climatério</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{--oliva:#6B7A5F;--oliva-esc:#4F5C46;--caramelo:#D4B895;--caramelo-esc:#B89A73;
+--grafite:#2C2A29;--areia:#E8E3DD;--off:#FAF9F6;--branco:#fff;--cinza:#6E6960;--borda:#DDD7CF;
+--verde:#4F7A4A;--vermelho:#A3453B;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--areia);color:var(--grafite);font-family:var(--sans);font-size:16px;
+line-height:1.62;-webkit-font-smoothing:antialiased;display:flex;justify-content:center}
+.app{width:100%;max-width:660px;background:var(--off);min-height:100vh;
+box-shadow:0 0 60px rgba(44,42,41,.08)}
+
+.topo{background:linear-gradient(157deg,#7A8A6D,#6B7A5F 34%,#4F5C46 80%);color:var(--off);
+padding:52px 30px 46px;text-align:center;position:relative;overflow:hidden}
+.topo .arc{position:absolute;width:340px;height:340px;border:1px solid rgba(212,184,149,.2);
+border-radius:50%;top:-140px;right:-120px}
+.check{width:60px;height:60px;border-radius:50%;background:rgba(250,249,246,.14);
+border:1.5px solid var(--caramelo);margin:0 auto 22px;display:grid;place-items:center;
+font-size:28px;color:var(--caramelo);position:relative}
+.topo h1{font-family:var(--serif);font-size:34px;font-weight:400;line-height:1.14;color:#fff;position:relative}
+.topo p{font-size:17px;color:rgba(250,249,246,.88);margin-top:14px;position:relative;
+max-width:420px;margin-left:auto;margin-right:auto}
+
+.corpo{padding:38px 30px 50px}
+h2{font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.2;margin-bottom:10px}
+.kick{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--caramelo-esc);
+font-weight:700;margin-bottom:12px}
+p{margin:0 0 16px}
+.bloco{margin-bottom:44px}
+
+.passos{list-style:none;counter-reset:s}
+.passos li{counter-increment:s;position:relative;padding:16px 0 16px 50px;border-top:1px solid var(--borda);font-size:16px}
+.passos li::before{content:counter(s);position:absolute;left:0;top:16px;width:32px;height:32px;
+border-radius:50%;background:var(--areia);color:var(--oliva-esc);display:grid;place-items:center;
+font-size:14px;font-weight:700}
+.passos li b{display:block;margin-bottom:3px}
+.passos li small{color:var(--cinza);font-size:14.5px;line-height:1.5;display:block}
+
+.acao{background:linear-gradient(155deg,#F3F1EC,#E9E4DA);border:1px solid #DDD5C7;
+border-radius:14px;padding:28px 30px;margin:6px 0 0}
+.acao .sel{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#9C7F5C;
+font-weight:700;margin-bottom:12px}
+.acao h3{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--oliva-esc);margin-bottom:12px}
+.acao ol{margin:14px 0 0 18px;font-size:16px}
+.acao li{margin-bottom:9px}
+.acao .why{border-top:1px solid #D8CEBE;margin-top:18px;padding-top:15px;font-size:14.5px;color:var(--cinza)}
+
+.nota{background:var(--branco);border:1px solid var(--borda);border-radius:12px;padding:22px 24px;margin:18px 0}
+.nota b.t{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--oliva-esc);
+display:block;margin-bottom:8px}
+.nota p{font-size:15.5px;color:var(--cinza);margin:0}
+.nota p+p{margin-top:9px}
+
+.form{background:var(--branco);border:1px solid var(--borda);border-radius:14px;padding:26px 28px}
+label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+color:var(--oliva-esc);font-weight:700;margin-bottom:6px}
+input{width:100%;padding:14px 16px;border:1.5px solid var(--borda);border-radius:10px;
+font-size:16px;font-family:inherit;background:var(--off);color:var(--grafite);margin-bottom:14px}
+input:focus{outline:none;border-color:var(--oliva)}
+.btn{width:100%;background:var(--oliva);color:#fff;border:none;border-radius:11px;padding:16px;
+font-size:16.5px;font-weight:700;font-family:inherit;cursor:pointer;transition:.15s}
+.btn:hover{background:var(--oliva-esc)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.mini{font-size:13px;color:var(--cinza);margin-top:12px;line-height:1.5}
+.ok{display:none;background:#E4EDE2;border:1px solid #C6D8C1;border-radius:11px;
+padding:18px 22px;color:var(--verde);font-size:15.5px}
+
+.oferta{background:linear-gradient(157deg,#7A8A6D,#4F5C46 68%,#3B4434);color:var(--off);
+border-radius:16px;padding:34px 30px;text-align:center}
+.oferta .k{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--caramelo)}
+.oferta h3{font-family:var(--serif);font-size:29px;font-weight:400;color:#fff;margin:12px 0 14px;line-height:1.14}
+.oferta p{font-size:16px;color:rgba(250,249,246,.87)}
+.oferta ul{list-style:none;text-align:left;max-width:400px;margin:20px auto 24px}
+.oferta li{padding:9px 0 9px 28px;position:relative;font-size:15.5px;color:rgba(250,249,246,.92);
+border-bottom:1px solid rgba(250,249,246,.14)}
+.oferta li:last-child{border-bottom:none}
+.oferta li::before{content:"";position:absolute;left:2px;top:19px;width:12px;height:2px;background:var(--caramelo)}
+.oferta .cta{display:block;background:var(--caramelo);color:#2C2A29;text-decoration:none;
+border:none;width:100%;font-family:inherit;font-size:17.5px;font-weight:700;padding:18px;
+border-radius:11px;cursor:pointer;transition:.15s}
+.oferta .cta:hover{background:#C4A681}
+.oferta .obs{font-size:13px;color:rgba(250,249,246,.6);margin-top:12px}
+.oferta input{background:rgba(255,255,255,.09);border-color:rgba(250,249,246,.24);color:#fff}
+.oferta input::placeholder{color:rgba(250,249,246,.45)}
+.oferta label{color:var(--caramelo);text-align:left}
+
+footer{padding:32px 30px 40px;font-size:12.5px;color:var(--cinza);line-height:1.6;border-top:1px solid var(--borda)}
+footer b{color:var(--grafite)}
+@media(max-width:520px){.topo{padding:40px 22px 36px}.topo h1{font-size:28px}
+.corpo{padding:30px 22px 40px}h2{font-size:23px}.acao,.form,.oferta{padding:22px 20px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topo">
+    <div class="arc"></div>
+    <div class="check">⏳</div>
+    <h1>Falta só o pagamento.</h1>
+    <p>Assim que o Pix ou o boleto for confirmado, o seu material chega no e-mail automaticamente.</p>
+  </div>
+  <div class="corpo">
+    <div class="bloco">
+      <div class="kick">Falta um passo</div>
+      <h2>O seu pagamento<br>ainda não foi confirmado</h2>
+      <p>Você gerou o código, mas ele <b>ainda não foi pago</b>. Assim que o pagamento cair,
+      o material chega no seu e-mail automaticamente — costuma levar poucos minutos.</p>
+
+      <div class="acao">
+        <div class="sel">Se você escolheu Pix</div>
+        <h3>Pague agora, enquanto<br>o código está válido</h3>
+        <ol>
+          <li>Abra o aplicativo do seu banco.</li>
+          <li>Escolha <b>Pix &gt; Pagar &gt; Pix Copia e Cola</b>.</li>
+          <li>Cole o código que apareceu na tela de pagamento ou chegou no seu e-mail.</li>
+          <li>Confira o valor e confirme.</li>
+        </ol>
+        <div class="why"><b>O código do Pix expira.</b> Se ele já tiver vencido, é só refazer
+        a compra — nada foi cobrado de você até aqui.</div>
+      </div>
+    </div>
+
+    <div class="bloco">
+      <div class="kick">Importante</div>
+      <h2>Duas coisas para<br>não acontecer</h2>
+      <div class="nota">
+        <b class="t">Não pague duas vezes</b>
+        <p>Se você já pagou e a confirmação ainda não chegou, <b>espere alguns minutos e olhe
+        o e-mail</b>, inclusive o spam. Fazer a compra de novo gera uma segunda cobrança.</p>
+      </div>
+      <div class="nota">
+        <b class="t">Na sua fatura ou extrato</b>
+        <p>A compra aparece como <b>HTM*PORINTEIRO</b>.</p>
+      </div>
+    </div>
+
+    <div class="bloco" style="margin-bottom:0">
+      <div class="kick">Se precisar</div>
+      <h2>Alguma coisa<br>não saiu certa?</h2>
+      <div class="nota">
+        <b class="t">Suporte</b>
+        <p>O código não chegou, expirou, ou você pagou e nada aconteceu: responda o e-mail da
+        compra ou escreva para o endereço de suporte que consta nele. Respondo em até 24 horas
+        úteis e resolvo com você.</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p><b>O Mapa do Climatério</b> · POR INTEIRO</p>
+    <p style="margin-top:8px">Conteúdo exclusivamente educativo. Não constitui consulta,
+    diagnóstico, prescrição ou tratamento e não substitui acompanhamento profissional.</p>
+    <p style="margin-top:12px">© 2026 POR INTEIRO — Daniella Leal. Todos os direitos reservados.</p>
+  </footer>
+</div>
+</body>
+</html>
